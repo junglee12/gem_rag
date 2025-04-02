@@ -200,7 +200,7 @@ def get_rag_response(query: str, index: faiss.Index, chunks: List[str], history:
         return f"Model '{model_name}' unavailable."
 
     query_emb = embed_query(query)
-    if not query_emb:
+    if query_emb is None:  # Fixed: Explicit None check
         return "Failed to process query."
 
     context = retrieve_chunks(query_emb, index, chunks)
