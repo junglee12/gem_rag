@@ -9,3 +9,4 @@ openpyxl # Needed by pandas for Excel files
 Pillow # For image handling
 faiss-cpu # or faiss-gpu if you have CUDA setup
 numpy
+cryptography>=3.1 
